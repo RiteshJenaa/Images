@@ -1,6 +1,6 @@
 //Global Variables
 float imageX, imageY, imageWidth, imageHeight, imageWidthRatio=0.0, imageHeightRatio=0.0;
-int largerDimension, smallerDimension;
+float largerDimension, smallerDimension;
 PImage pic;
 Boolean widthLarger=false, heightLarger=false;
 //
@@ -11,8 +11,8 @@ fullScreen();
 pic = loadImage("Cat_Image.jpg"); //Dimensions : width 600, height 400
 //Find the larger dimension for the aspect ratio
 
-int picWidth = 600;
-int picHeight = 300;
+int picWidth = 1360;
+int picHeight = 768;
 if (picWidth >= picHeight ) 
 {
   largerDimension = picWidth;
@@ -20,19 +20,23 @@ if (picWidth >= picHeight )
   widthLarger = true;
 } else {
   largerDimension = picHeight;
-  smallerDimension = picHeight;
+  smallerDimension = picWidth;
   heightLarger = true;
 }//End Dimension Comparision
 
 println (smallerDimension, largerDimension, widthLarger, heightLarger ); //Verifying the Variables
 
 //Note: Single line IFs can be summarized to IF-ElSE.
-if ( widthLarger == true ) imageWidthRatio = float (largerDimension / largerDimension );
-if ( widthLarger == true ) imageHeightRatio = float (smallerDimension / largerDimension );
-if ( heightLarger == false ) imageHeightRatio = float (largerDimension / largerDimension );
-if ( heightLarger == false ) imageWidthRatio = float (smallerDimension / largerDimension );
-println (imageWidthRatio, imageHeightRatio, smallerDimension/largerDimension, 300.0/600.0); //Verifying variables
+if ( widthLarger == true ) imageWidthRatio = (largerDimension / largerDimension );
+if ( widthLarger == true ) imageHeightRatio = (smallerDimension / largerDimension );
+if ( heightLarger == true ) imageHeightRatio = (largerDimension / largerDimension );
+if ( heightLarger == true ) imageWidthRatio = (smallerDimension / largerDimension );
 
+println (imageWidthRatio, imageHeightRatio, smallerDimension/largerDimension, 768.0/1360.0); //Verifying variables
+//Note: println()also verifies decimal places (compiler will truncate)
+//Answers must be: 1.0 and between 1 and 0(decimals).
+//Ratio 1.0 similar to style="width:100%", for html (websites)
+//Ratio "0.75" similar to style="height:auto", for html (websites)
 imageX = displayWidth*0;
 imageY = displayHeight*0;
 imageWidth = displayWidth;
