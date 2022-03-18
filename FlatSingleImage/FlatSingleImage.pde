@@ -41,8 +41,11 @@ println (imageWidthRatio, imageHeightRatio, smallerDimension/largerDimension, 76
 
 imageX = displayWidth*0;
 imageY = displayHeight*0;
-imageWidth = displayWidth*imageWidthRatio;
-imageHeight = displayHeight*imageHeightRatio;
+imageWidth = displayWidth; //*imageWidthRatio
+imageHeight = displayHeight; //*imageHeightRatio
+
+if (imageWidth > displayWidth) println("ERROR: Image is too wide! Please try again"); //Simple display checker for image width
+if (imageHeight > displayHeight) println("ERROR: Image is too tall! Please try again"); //Simple display checker for image height
 
 //
 
