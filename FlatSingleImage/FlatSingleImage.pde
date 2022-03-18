@@ -33,10 +33,12 @@ if ( heightLarger == true ) imageHeightRatio = (largerDimension / largerDimensio
 if ( heightLarger == true ) imageWidthRatio = (smallerDimension / largerDimension );
 
 println (imageWidthRatio, imageHeightRatio, smallerDimension/largerDimension, 768.0/1360.0); //Verifying variables
+
 //Note: println()also verifies decimal places (compiler will truncate)
 //Answers must be: 1.0 and between 1 and 0(decimals).
 //Ratio 1.0 similar to style="width:100%", for html (websites)
 //Ratio "0.75" similar to style="height:auto", for html (websites)
+
 imageX = displayWidth*0;
 imageY = displayHeight*0;
 imageWidth = displayWidth;
