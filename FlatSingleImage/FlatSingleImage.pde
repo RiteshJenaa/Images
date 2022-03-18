@@ -11,8 +11,8 @@ fullScreen();
 pic = loadImage("Cat_Image.jpg"); //Dimensions : width 600, height 400
 //Find the larger dimension for the aspect ratio
 
-int picWidth = 1360;
-int picHeight = 768;
+int picWidth = 1360; // MINE
+int picHeight = 768; // MINE
 if (picWidth >= picHeight ) 
 {
   largerDimension = picWidth;
@@ -41,8 +41,9 @@ println (imageWidthRatio, imageHeightRatio, smallerDimension/largerDimension, 76
 
 imageX = displayWidth*0;
 imageY = displayHeight*0;
-imageWidth = displayWidth;
-imageHeight = displayHeight;
+imageWidth = displayWidth*imageWidthRatio;
+imageHeight = displayHeight*imageHeightRatio;
+
 //
 
 //Rectangle layout
