@@ -9,23 +9,29 @@ fullScreen(); //displayWidth, displayHeight
 //Landscape Presentation
 //
 
+//Aspect Ratio Calculations!!!
+int pic1Width = 1080; 
+int pic1Height = 720;
+int pic2Width = 1280;
+int pic2Height = 720;
 //Populating Variables
-pic1 = loadImage("Tiger.jpg"); //Dimension: 1080 x 720
-pic2 = loadImage("Mountain.jpg"); //Dimensions: 1280 x 720
-/*
-rectXPic1 = displayWidth;
-rectYPic1 = displayHeight;
-rectWidthPic1 = displayWidth;
-rectHeightPic1 = displayHeight;
-rectXPic2 = displayWidth;
-rectYPic2 = displayHeight;
-rectWidthPic2 = displayWidth;
-rectHeightPic2 = displayHeight;
+pic1 = loadImage("Tiger.jpg"); //Dimension: 1080 x 720, width and height
+pic2 = loadImage("Mountains.jpg"); //Dimensions: 1280 x 720, width and height
 //
-*/
+rectXPic1 = displayWidth*1/5;
+rectYPic1 = displayHeight*0;
+rectWidthPic1 = displayWidth*1/2;
+rectHeightPic1 = displayHeight*1/2;
+rectXPic2 = displayWidth*1/8;
+rectYPic2 = displayHeight*1/2;
+rectWidthPic2 = displayWidth*5/8;
+rectHeightPic2 = displayHeight*1/2;
+//
+
 
 //Rectangle Layout
-rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image 1, Landscape
-rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image2, Landscape
+rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image1, Landscape demonstration
+rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image2, Landscape demonstration
+image(pic1, pic2
 //image(pic1);
 //image(pic2);
