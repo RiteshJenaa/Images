@@ -8,11 +8,11 @@ Boolean widthLarger=false, heightLarger=false;
 fullScreen();
 
 //Population
-pic = loadImage("Cat_Image.jpg"); //Dimensions : width 600, height 400
+pic = loadImage("Tiger.jpg"); //Dimensions : width  1080, height 720
 //Find the larger dimension for the aspect ratio
 
-int picWidth = 1360; // MINE
-int picHeight = 768; // MINE
+int picWidth = 1080; // MINE
+int picHeight = 720; // MINE
 if (picWidth >= picHeight ) 
 {
   largerDimension = picWidth;
@@ -32,7 +32,7 @@ if ( widthLarger == true ) imageHeightRatio = (smallerDimension / largerDimensio
 if ( heightLarger == true ) imageHeightRatio = (largerDimension / largerDimension );
 if ( heightLarger == true ) imageWidthRatio = (smallerDimension / largerDimension );
 
-println (imageWidthRatio, imageHeightRatio, smallerDimension/largerDimension, 768.0/1360.0); //Verifying variables
+println (imageWidthRatio, imageHeightRatio, smallerDimension/largerDimension, 720.0/1080.0); //Verifying variables
 
 //Note: println()also verifies decimal places (compiler will truncate)
 //Answers must be: 1.0 and between 1 and 0(decimals).
