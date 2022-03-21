@@ -67,7 +67,8 @@ rectHeightPic2 = displayHeight*1/2;
 
 //Rectangle Layout
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image1, Landscape demonstration
+image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image2, Landscape demonstration
-image(pic1, pic2, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
+image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
 //image(pic1);
 //image(pic2);
