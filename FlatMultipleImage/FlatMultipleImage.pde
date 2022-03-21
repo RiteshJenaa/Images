@@ -15,6 +15,7 @@ int pic1Height = 720;
 int pic2Width = 1280;
 int pic2Height = 720;
 int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension;
+float imageWidthRatioPic1, imageHeightRatioPic1;
 Boolean widthPic1Larger=false, heightPic1Larger=false, widthPic2Larger=false, heightPic2Larger=false;
 //
 
@@ -37,6 +38,16 @@ if ( pic2Width>=pic2Height ) {
   smallerPic2Dimension = pic2Width;
   heightPic2Larger = true;
 } //End pic2 larger dimension ID
+println (smallerPic1Dimension, largerPic1Dimension, smallerPic2Dimension, largerPic2Dimension); //Verification
+//Note: single line IF can be summarized as well
+if (widthPic1Larger == true) imageWidthRatioPic1 = largerPic1Dimension / largerPic1Dimension;
+if (widthPic1Larger == true) imageHeightRatioPic1 = smallerPic1Dimension / largerPic1Dimension;
+if (heightPic1Larger == true) imageWidthRatioPic1 = smallerPic1Dimension / largerPic1Dimension;
+if (heightPic1Larger == true) imageHeightRatioPic1 = largerPic1Dimension / smallerPic1Dimension;
+if (widthPic2Larger == true) imageWidthRatioPic2 = largerPic2Dimension / largerPic2Dimension;
+if (widthPic2Larger == true) imageHeightRatioPic2 = smallerPic2Dimension / largerPic2Dimension;
+if (heightPic2Larger == true) imageWidthRatioPic2 = smallerPic2Dimension / largerPic2Dimension;
+if (heightPic2Larger == true)imageWidthRatioPic2 = smallerPic2Dimension / largerPic2Dimension;
 //
 
 //Populating Variables
@@ -56,6 +67,6 @@ rectHeightPic2 = displayHeight*1/2;
 //Rectangle Layout
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image1, Landscape demonstration
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image2, Landscape demonstration
-image(pic1, pic2);
+image(pic1, pic2, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
 //image(pic1);
 //image(pic2);
