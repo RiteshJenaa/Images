@@ -40,14 +40,14 @@ if ( pic2Width>=pic2Height ) {
 } //End pic2 larger dimension ID
 println (smallerPic1Dimension, largerPic1Dimension, smallerPic2Dimension, largerPic2Dimension); //Verification for image details
 //Note: single line IF can be summarized as well
-if (widthPic1Larger == true) imageWidthRatioPic1 = largerPic1Dimension / largerPic1Dimension;
-if (widthPic1Larger == true) imageHeightRatioPic1 = smallerPic1Dimension / largerPic1Dimension;
-if (heightPic1Larger == true) imageWidthRatioPic1 = smallerPic1Dimension / largerPic1Dimension;
-if (heightPic1Larger == true) imageHeightRatioPic1 = largerPic1Dimension / smallerPic1Dimension;
-if (widthPic2Larger == true) imageWidthRatioPic2 = largerPic2Dimension / largerPic2Dimension;
-if (widthPic2Larger == true) imageHeightRatioPic2 = smallerPic2Dimension / largerPic2Dimension;
-if (heightPic2Larger == true) imageWidthRatioPic2 = smallerPic2Dimension / largerPic2Dimension;
-if (heightPic2Larger == true)imageWidthRatioPic2 = smallerPic2Dimension / largerPic2Dimension;
+if (widthPic1Larger == true) imageWidthRatioPic1 = float (largerPic1Dimension) / float (largerPic1Dimension);
+if (widthPic1Larger == true) imageHeightRatioPic1 = float (smallerPic1Dimension) / float (largerPic1Dimension);
+if (heightPic1Larger == true) imageWidthRatioPic1 = float (smallerPic1Dimension) / float (largerPic1Dimension);
+if (heightPic1Larger == true) imageHeightRatioPic1 = float (largerPic1Dimension) / float (smallerPic1Dimension);
+if (widthPic2Larger == true) imageWidthRatioPic2 = float (largerPic2Dimension) / float (largerPic2Dimension);
+if (widthPic2Larger == true) imageHeightRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
+if (heightPic2Larger == true) imageWidthRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
+if (heightPic2Larger == true)imageWidthRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
 println (imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2); //Verfication in ratios
 //
 
