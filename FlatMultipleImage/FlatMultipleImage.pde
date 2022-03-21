@@ -14,8 +14,8 @@ int pic1Width = 1080;
 int pic1Height = 720;
 int pic2Width = 1280;
 int pic2Height = 720;
-int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension, imageHeightRatioPic2;
-float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2;
+int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension;
+float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2;
 Boolean widthPic1Larger=false, heightPic1Larger=false, widthPic2Larger=false, heightPic2Larger=false;
 //
 
@@ -38,6 +38,7 @@ if ( pic2Width>=pic2Height ) {
   smallerPic2Dimension = pic2Width;
   heightPic2Larger = true;
 } //End pic2 larger dimension ID
+
 println (smallerPic1Dimension, largerPic1Dimension, smallerPic2Dimension, largerPic2Dimension); //Verification for image details
 //Note: single line IF can be summarized as well
 if (widthPic1Larger == true) imageWidthRatioPic1 = float (largerPic1Dimension) / float (largerPic1Dimension);
@@ -47,8 +48,8 @@ if (heightPic1Larger == true) imageHeightRatioPic1 = float (largerPic1Dimension)
 if (widthPic2Larger == true) imageWidthRatioPic2 = float (largerPic2Dimension) / float (largerPic2Dimension);
 if (widthPic2Larger == true) imageHeightRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
 if (heightPic2Larger == true) imageWidthRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
-if (heightPic2Larger == true)imageWidthRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
-println (imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2); //Verfication in ratios
+if (heightPic2Larger == true) imageHeightRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
+//println (imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2); //Verfication in ratios
 //
 
 //Populating Variables
