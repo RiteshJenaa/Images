@@ -10,8 +10,8 @@ fullScreen(); //displayWidth, displayHeight
 //
 
 //Populating Variables
-pic1 = loadImage(Cat_Image.jpg); //Dimension: 
-pic2 = loadImage(); //Dimensions
+pic1 = loadImage("Cat_Image.jpg"); //Dimension: 
+pic2 = loadImage("Mountain.jpg"); //Dimensions: 1280 x 720
 /*
 rectXPic1 = displayWidth;
 rectYPic1 = displayHeight;
