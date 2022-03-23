@@ -9,13 +9,18 @@ fullScreen(); //displayWidth, displayHeight
 //Landscape Presentation
 //
 
+//Populating Variables
+pic1 = loadImage("Tiger.jpg"); //Dimension: 1080 x 720, width and height
+pic2 = loadImage("Mountains.jpg"); //Dimensions: 1280 x 720, width and height
+//
+
 //Aspect Ratio Calculations
 int pic1Width = 1080; 
 int pic1Height = 720;
 int pic2Width = 1280;
 int pic2Height = 720;
 int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension;
-float imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2;
+float imageWidthRatioPic1=0.0, imageHeightRatioPic1=0.0, imageWidthRatioPic2=0.0, imageHeightRatioPic2=0.0;
 Boolean widthPic1Larger=false, heightPic1Larger=false, widthPic2Larger=false, heightPic2Larger=false;
 //
 
@@ -49,27 +54,34 @@ if (widthPic2Larger == true) imageWidthRatioPic2 = float (largerPic2Dimension) /
 if (widthPic2Larger == true) imageHeightRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
 if (heightPic2Larger == true) imageWidthRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
 if (heightPic2Larger == true) imageHeightRatioPic2 = float (smallerPic2Dimension) / float (largerPic2Dimension);
-//println (imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2); //Verfication in ratios
-//
+println(imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2); //Verification in ratios
 
-//Populating Variables
-pic1 = loadImage("Tiger.jpg"); //Dimension: 1080 x 720, width and height
-pic2 = loadImage("Mountains.jpg"); //Dimensions: 1280 x 720, width and height
-//
-rectXPic1 = displayWidth*1/5;
+
+rectXPic1 = displayWidth*1/4;
 rectYPic1 = displayHeight*0;
 rectWidthPic1 = displayWidth*1/2;
 rectHeightPic1 = displayHeight*1/2;
-rectXPic2 = displayWidth*1/8;
+rectXPic2 = displayWidth*1/9;
 rectYPic2 = displayHeight*1/2;
-rectWidthPic2 = displayWidth*5/8;
+rectWidthPic2 = displayWidth*7/9;
 rectHeightPic2 = displayHeight*1/2;
 //
 
+float pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted;
+pic1WidthAdjusted = rectWidthPic1 * imageWidthRatioPic1;
+pic1HeightAdjusted = rectHeightPic1 * imageHeightRatioPic1;
+pic2WidthAdjusted = rectWidthPic2 * imageWidthRatioPic2;
+pic2HeightAdjusted = rectHeightPic1 * imageHeightRatioPic2;
+println (pic1Width, pic1Height, pic2Width, pic2Height);
+println (pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted);
+//Changes only if it looks odd
+
 //Rectangle Layout
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image1, Landscape demonstration
-image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1);
+image(pic1, rectXPic1, rectYPic1, pic1WidthAdjusted, pic1HeightAdjusted); // (rectWidthPic1, rectHeightPic1)
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image2, Landscape demonstration
-image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2);
+image(pic2, rectXPic2, rectYPic2, pic2WidthAdjusted, pic2HeightAdjusted); //(rectWidthPic2, rectHeightPic2)
+//image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/5), pic2WidthAdjusted, pic2HeightAdjusted);
 //image(pic1);
 //image(pic2);
+//Change rect to aspect ratio
