@@ -11,7 +11,7 @@ float imageWidthRatioPic1=0.0, imageHeightRatioPic1=0.0, imageWidthRatioPic2=0.0
 Boolean widthPic1Larger=false, heightPic1Larger=false, widthPic2Larger=false, heightPic2Larger=false;
 color purple=#FFFFFF;
 //
-//
+
 void setup() 
 {
 }//End setup
@@ -32,6 +32,9 @@ void mousePressed()
 
 //
 
+//Variables
+//
+
 //Geometry
 fullScreen(); //displayWidth, displayHeight
 //Landscape Presentation
@@ -39,12 +42,14 @@ fullScreen(); //displayWidth, displayHeight
 
 //Populating Variables
 pic1 = loadImage("Tiger.jpg"); //Dimension: 1080 x 720, width and height
-pic2 = loadImage("Mountains.jpg"); //Dimensions: 1280 x 720, width and height
+pic2 = loadImage("City.jpg"); //Dimensions: 1280 x 720, width and height
+//
+
+//Aspect Ratio Calculations
 //
 
 
-
-if ( pic1Width>=pic1Height ) { //for landscape
+if ( pic1Width >= pic1Height ) { //for landscape
   largerPic1Dimension = pic1Width;
   smallerPic1Dimension = pic1Height;
   widthPic1Larger = true;
@@ -54,7 +59,7 @@ if ( pic1Width>=pic1Height ) { //for landscape
   heightPic1Larger = true;
 }//End pic1 larger dimension ID
 //
-if ( pic2Width>=pic2Height ) {
+if ( pic2Width >= pic2Height ) {
   largerPic2Dimension = pic2Width;
   smallerPic2Dimension = pic2Height;
   widthPic1Larger = true;
@@ -64,9 +69,10 @@ if ( pic2Width>=pic2Height ) {
   heightPic2Larger = true;
 } //End pic2 larger dimension ID
 
+
 println (smallerPic1Dimension, largerPic1Dimension, smallerPic2Dimension, largerPic2Dimension); //Verification for image details
 //Note: single line IF can be summarized as well
-if ( widthPic1Larger == true) imageWidthRatioPic1 = float (largerPic1Dimension) / float (largerPic1Dimension);
+if ( widthPic1Larger == true ) imageWidthRatioPic1 = float (largerPic1Dimension) / float (largerPic1Dimension);
 if ( widthPic1Larger == true ) imageHeightRatioPic1 = float (smallerPic1Dimension) / float (largerPic1Dimension);
 if ( heightPic1Larger == true ) imageWidthRatioPic1 = float (smallerPic1Dimension) / float (largerPic1Dimension);
 if ( heightPic1Larger == true ) imageHeightRatioPic1 = float (largerPic1Dimension) / float (largerPic1Dimension);
@@ -87,22 +93,26 @@ rectWidthPic2 = displayWidth*14/18;
 rectHeightPic2 = displayHeight*1/2;
 //
 
-float pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted;
 pic1WidthAdjusted = rectWidthPic1 * imageWidthRatioPic1;
 pic1HeightAdjusted = rectHeightPic1 * imageHeightRatioPic1;
 pic2WidthAdjusted = rectWidthPic2 * imageWidthRatioPic2;
-pic2HeightAdjusted = rectHeightPic1 * imageHeightRatioPic2;
+pic2HeightAdjusted = rectHeightPic2 * imageHeightRatioPic2;
 println (pic1Width, pic1Height, pic2Width, pic2Height);
 println (pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted);
 //Change to aspect ratio, only if it looks odd
 
+//Color
+fill(purple);
+
 //Rectangle Layout
+
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image1, Landscape demonstration
 image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); // (pic1WidthAdjusted, pic1HeightAdjusted)
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image2, Landscape demonstration
 image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //(pic2WidthAdjusted, pic2HeightAdjusted)
 //image(pic1, rectXPic2, rectYPic2+(rectYPic2*1/6), pic2WidthAdjusted, pic2HeightAdjusted);
 //image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/6), pic2WidthAdjusted, pic2HeightAdjusted);
+println ("Both Images look good no need to change the aspect ratio");
 
 
 //image(pic1);
