@@ -57,13 +57,13 @@ if (heightPic2Larger == true) imageHeightRatioPic2 = float (smallerPic2Dimension
 println(imageWidthRatioPic1, imageHeightRatioPic1, imageWidthRatioPic2, imageHeightRatioPic2); //Verification in ratios
 
 
-rectXPic1 = displayWidth*1/4;
+rectXPic1 = displayWidth*2/8;
 rectYPic1 = displayHeight*0;
-rectWidthPic1 = displayWidth*1/2;
-rectHeightPic1 = displayHeight*1/2;
-rectXPic2 = displayWidth*1/9;
+rectWidthPic1 = displayWidth*2/4;
+rectHeightPic1 = displayHeight*2/4;
+rectXPic2 = displayWidth*2/18;
 rectYPic2 = displayHeight*1/2;
-rectWidthPic2 = displayWidth*7/9;
+rectWidthPic2 = displayWidth*14/18;
 rectHeightPic2 = displayHeight*1/2;
 //
 
@@ -78,10 +78,11 @@ println (pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdj
 
 //Rectangle Layout
 rect(rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); //Image1, Landscape demonstration
-image(pic1, rectXPic1, rectYPic1, pic1WidthAdjusted, pic1HeightAdjusted); // (rectWidthPic1, rectHeightPic1)
+image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); // (pic1WidthAdjusted, pic1HeightAdjusted)
 rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image2, Landscape demonstration
-image(pic2, rectXPic2, rectYPic2, pic2WidthAdjusted, pic2HeightAdjusted); //(rectWidthPic2, rectHeightPic2)
-//image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/5), pic2WidthAdjusted, pic2HeightAdjusted);
+image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //(pic2WidthAdjusted, pic2HeightAdjusted)
+//image(pic1, rectXPic2, rectYPic2+(rectYPic2*1/6), pic2WidthAdjusted, pic2HeightAdjusted);
+//image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/6), pic2WidthAdjusted, pic2HeightAdjusted);
 //image(pic1);
 //image(pic2);
 //Change rect to aspect ratio
