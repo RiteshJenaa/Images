@@ -2,10 +2,7 @@
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
 float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
-int pic1Width = 1080; 
-int pic1Height = 720;
-int pic2Width = 1280;
-int pic2Height = 720;
+int pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted;
 int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension;
 float imageWidthRatioPic1=0.0, imageHeightRatioPic1=0.0, imageWidthRatioPic2=0.0, imageHeightRatioPic2=0.0;
 Boolean widthPic1Larger=false, heightPic1Larger=false, widthPic2Larger=false, heightPic2Larger=false;
@@ -14,6 +11,37 @@ color purple=#FFFFFF;
 
 void setup() 
 {
+  //Geometry
+  fullScreen(); //displayWidth, displayHeight
+  //Landscape Presentation
+  //Populating Variables
+  pic1 = loadImage("Tiger.jpg"); //Dimension: 1080 x 720, width and height
+  pic2 = loadImage("City.jpg"); //Dimensions: 1280 x 720, width and height
+  //Aspect Ratio Calculations
+  int pic1Width = 1080; 
+  int pic1Height = 720;
+  int pic2Width = 1280;
+  int pic2Height = 720;
+
+  if ( pic1Width >= pic1Height ) { //for landscape
+    largerPic1Dimension = pic1Width;
+    smallerPic1Dimension = pic1Height;
+    widthPic1Larger = true;
+  } else { //for portrait
+    largerPic1Dimension = pic1Height;
+    smallerPic1Dimension = pic1Width;
+    heightPic1Larger = true;
+  }//End pic1 larger dimension ID
+  //
+  if ( pic2Width >= pic2Height ) {
+    largerPic2Dimension = pic2Width;
+    smallerPic2Dimension = pic2Height;
+    widthPic1Larger = true;
+  } else {
+    largerPic2Dimension = pic2Height;
+    smallerPic2Dimension = pic2Width;
+    heightPic2Larger = true;
+  } //End pic2 larger dimension ID
 }//End setup
 //
 void draw() 
@@ -30,44 +58,14 @@ void mousePressed()
 //
 
 
-//
 
-//Variables
-//
 
-//Geometry
-fullScreen(); //displayWidth, displayHeight
-//Landscape Presentation
-//
 
-//Populating Variables
-pic1 = loadImage("Tiger.jpg"); //Dimension: 1080 x 720, width and height
-pic2 = loadImage("City.jpg"); //Dimensions: 1280 x 720, width and height
-//
 
-//Aspect Ratio Calculations
 //
 
 
-if ( pic1Width >= pic1Height ) { //for landscape
-  largerPic1Dimension = pic1Width;
-  smallerPic1Dimension = pic1Height;
-  widthPic1Larger = true;
-} else { //for portrait
-  largerPic1Dimension = pic1Height;
-  smallerPic1Dimension = pic1Width;
-  heightPic1Larger = true;
-}//End pic1 larger dimension ID
-//
-if ( pic2Width >= pic2Height ) {
-  largerPic2Dimension = pic2Width;
-  smallerPic2Dimension = pic2Height;
-  widthPic1Larger = true;
-} else {
-  largerPic2Dimension = pic2Height;
-  smallerPic2Dimension = pic2Width;
-  heightPic2Larger = true;
-} //End pic2 larger dimension ID
+
 
 
 println (smallerPic1Dimension, largerPic1Dimension, smallerPic2Dimension, largerPic2Dimension); //Verification for image details
