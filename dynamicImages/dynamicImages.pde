@@ -2,6 +2,8 @@
 float rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1;
 float rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2;
 PImage pic1, pic2;
+
+int pic1Width, pic1Height, pic2Width, pic2Height;
 float pic1WidthAdjusted, pic1HeightAdjusted, pic2WidthAdjusted, pic2HeightAdjusted;
 int largerPic1Dimension, smallerPic1Dimension, largerPic2Dimension, smallerPic2Dimension;
 float imageWidthRatioPic1=0.0, imageHeightRatioPic1=0.0, imageWidthRatioPic2=0.0, imageHeightRatioPic2=0.0;
@@ -86,10 +88,11 @@ void draw()
   image(pic1, rectXPic1, rectYPic1, rectWidthPic1, rectHeightPic1); // (pic1WidthAdjusted, pic1HeightAdjusted)
   rect(rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //Image2, Landscape demonstration
   image(pic2, rectXPic2, rectYPic2, rectWidthPic2, rectHeightPic2); //(pic2WidthAdjusted, pic2HeightAdjusted)
-  //image(pic1, rectXPic2, rectYPic2+(rectYPic2*1/6), pic2WidthAdjusted, pic2HeightAdjusted);
+  //image(pic1, rectXPic1, rectYPic1, pic1WidthAdjusted, pic1HeightAdjusted);
+  //image(pic2, rectXPic2, rectYPic2, pic2WidthAdjusted, pic2HeightAdjusted);
+  //image(pic1, rectXPic1, rectYPic1+(rectYPic1*1/6), pic1WidthAdjusted, pic1HeightAdjusted);
   //image(pic2, rectXPic2, rectYPic2+(rectYPic2*1/6), pic2WidthAdjusted, pic2HeightAdjusted);
   println ("Both Images look good no need to change the aspect ratio.");
-
 
   //image(pic1);
   //image(pic2);
